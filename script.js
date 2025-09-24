@@ -6,24 +6,20 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.z = 5;
 
 const geometry = new THREE.IcosahedronGeometry(1, 1);
-const material = new THREE.MeshStandardMaterial({ color: 0x2575fc, wireframe: true });
+const material = new THREE.MeshStandardMaterial({color: 0x2575fc, wireframe: true});
 const mesh = new THREE.Mesh(geometry, material);
 
-// Move ball below button
-mesh.position.y = -2;  
+// ✅ Move ball below button
+mesh.position.set(0, -1.5, 0); // push it below text
 mesh.scale.set(0.9, 0.9, 0.9);
+
+
 scene.add(mesh);
 
-// Lights
 const light = new THREE.PointLight(0xffffff, 1);
-light.position.set(5, 5, 5);
+light.position.set(5,5,5);
 scene.add(light);
 
-// Ambient light to make ball visible in dark mode
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-scene.add(ambientLight);
-
-// Animate ball
 function animate() {
   requestAnimationFrame(animate);
   mesh.rotation.x += 0.003;
@@ -46,13 +42,16 @@ gsap.utils.toArray(".panel").forEach((panel) => {
   });
 });
 
-// Hide ball after hero section
+// Hide ball when leaving hero section
 ScrollTrigger.create({
   trigger: "#hero",
-  start: "bottom top",
-  onLeave: () => gsap.to(mesh.scale, { x: 0, y: 0, z: 0, duration: 1 }),
-  onEnterBack: () => gsap.to(mesh.scale, { x: 0.9, y: 0.9, z: 0.9, duration: 1 })
+  start: "top top",
+  end: "bottom 80%",
+  onLeave: () => gsap.to(mesh.scale, {x: 0, y: 0, z: 0, duration: 1}),
+  onEnterBack: () => gsap.to(mesh.scale, {x: 0.9, y: 0.9, z: 0.9, duration: 1})
 });
+
+
 
 // Resize
 window.addEventListener('resize', () => {
@@ -61,7 +60,8 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// Theme Toggle with smooth color transition
+// Theme Toggle
+// Theme Toggle
 const themeBtn = document.getElementById("theme-toggle");
 themeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-theme");
@@ -69,9 +69,10 @@ themeBtn.addEventListener("click", () => {
 
   if(document.body.classList.contains("dark-theme")){
     themeBtn.textContent = "☀️ Light";
-    gsap.to(mesh.material.color, { r: 1, g: 1, b: 1, duration: 0.5 }); // white
+    mesh.material.color.set(0xffffff); // White ball in dark mode
   } else {
     themeBtn.textContent = "🌙 Dark";
-    gsap.to(mesh.material.color, { r: 0.15, g: 0.46, b: 0.99, duration: 0.5 }); // original blue
+    mesh.material.color.set(0x2575fc); // Original blue color in light mode
   }
 });
+

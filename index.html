@@ -15,21 +15,56 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-theme">
-  <!-- Theme Toggle -->
-  <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#hero">Hackitor.com</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn btn-outline-light">🌙 Dark</button>
+      </div>
+    </div>
+  </nav>
 
   <!-- Background canvas -->
-  <canvas id="bg"></canvas>
+  
 
-  <!-- Hero Section -->
-  <section id="hero" class="panel">
-    <h1 class="title">Hackitor.com</h1>
-    <p class="subtitle">Freelance Development & AI Solutions</p>
-    <a href="#projects" class="btn btn-primary mt-3">View Our Work</a>
-  </section>
+
+<!-- Hero Section -->
+<section id="hero" class="panel hero-panel d-flex justify-content-center align-items-center position-relative">
+  <div class="hero-left">
+    <img src="assets/laptopMobile.png" alt="Hero Image" class="img-fluid">
+  </div>
+  <div class="hero-right d-flex flex-column justify-content-center align-items-start text-start position-relative">
+    <div class="hero-text">
+      <h1 class="title">Hackitor.com</h1>
+      <p class="subtitle">Freelance Development & AI Solutions</p>
+      <a href="#projects" class="btn btn-primary mt-3">View Our Work</a>
+      <canvas id="bg"></canvas>
+      <canvas id="bg"></canvas>
+    </div>
+    <!-- Ball will appear under this div -->
+    
+  </div>
+</section>
+
+
 
   <!-- About Section -->
-  <section id="about" class="panel">
+  <section id="about" class="panel container py-5">
     <h2>About Us</h2>
     <p>
       At Hackitor.com, we specialize in building modern solutions across 
@@ -40,21 +75,19 @@
   </section>
 
   <!-- Skills Section -->
- <!-- Skills Section -->
-<section id="skills" class="panel">
-  <h2>What We Do</h2>
-  <div class="row mt-4 g-3"> <!-- added g-3 for spacing between columns -->
-    <div class="col-md-3 skill-box">📱 Mobile Development</div>
-    <div class="col-md-3 skill-box">🌐 Website Development</div> <!-- new skill -->
-    <div class="col-md-3 skill-box">🤖 Generative AI</div>
-    <div class="col-md-3 skill-box">📊 Machine Learning</div>
-    <div class="col-md-3 skill-box">🧠 RAG Models</div>
-  </div>
-</section>
-
+  <section id="skills" class="panel container py-5">
+    <h2>What We Do</h2>
+    <div class="row mt-4 g-3">
+      <div class="col-md-3 skill-box">📱 Mobile Development</div>
+      <div class="col-md-3 skill-box">🌐 Website Development</div>
+      <div class="col-md-3 skill-box">🤖 Generative AI</div>
+      <div class="col-md-3 skill-box">📊 Machine Learning</div>
+      <div class="col-md-3 skill-box">🧠 RAG Models</div>
+    </div>
+  </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="panel">
+  <section id="projects" class="panel container py-5">
     <h2>Our Work</h2>
     <div class="row mt-4">
       <div class="col-md-4">
@@ -85,13 +118,14 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="panel">
+  <section id="contact" class="panel container py-5">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:hackitor@hotmail.com">hackitor@hotmail.com</a></p>
     <p>For business inquiries, please reach out. (Form integration with Hotmail SMTP coming soon)</p>
   </section>
 
   <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

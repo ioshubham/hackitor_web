@@ -5,9 +5,10 @@ body {
 }
 
 canvas#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -103,3 +104,48 @@ canvas#bg {
   font-weight: 600;
   z-index: 10;
 }
+
+/* Hero section spacing */
+.hero-panel {
+  min-height: 90vh;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row; /* keep horizontal */
+  position: relative;
+  overflow: hidden;
+  align-items: center; /* vertical center overall */
+  justify-content: center;
+}
+
+/* Split hero into two halves */
+.hero-left,
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center; /* vertical alignment */
+}
+
+.hero-left img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-right {
+  flex-direction: column;
+  text-align: left;
+  padding-left: 40px;
+  justify-content: flex-start;
+  position: relative; /* make canvas position relative to this div */
+}
+
+/* Canvas should fill only hero-right and sit under text */
+.hero-right canvas#bg {
+  position: relative; /* remove absolute positioning */
+  margin-top: 20px;   /* space below text */
+  width: 100%;
+  height: 150px;      /* adjust as needed for ball size */
+  z-index: 0;
+}
+
+
