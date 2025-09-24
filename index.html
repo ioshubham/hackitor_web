@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackitor.com | Freelancer Portfolio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
+
+  <!-- Background canvas -->
+  <canvas id="bg"></canvas>
+
+  <!-- Hero Section -->
+  <section id="hero" class="panel">
+    <h1 class="title">Hackitor.com</h1>
+    <p class="subtitle">Freelance Development & AI Solutions</p>
+    <a href="#projects" class="btn btn-primary mt-3">View Our Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="panel">
+    <h2>About Us</h2>
+    <p>
+      At Hackitor.com, we specialize in building modern solutions across 
+      mobile apps, web development, and AI-driven systems.  
+      Our work spans <b>mobile (Android/iOS/Web)</b>, <b>Generative AI</b>, 
+      <b>machine learning models</b>, and <b>RAG models</b>.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+ <!-- Skills Section -->
+<section id="skills" class="panel">
+  <h2>What We Do</h2>
+  <div class="row mt-4 g-3"> <!-- added g-3 for spacing between columns -->
+    <div class="col-md-3 skill-box">📱 Mobile Development</div>
+    <div class="col-md-3 skill-box">🌐 Website Development</div> <!-- new skill -->
+    <div class="col-md-3 skill-box">🤖 Generative AI</div>
+    <div class="col-md-3 skill-box">📊 Machine Learning</div>
+    <div class="col-md-3 skill-box">🧠 RAG Models</div>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="panel">
+    <h2>Our Work</h2>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card shadow project-card">
+          <div class="card-body">
+            <h5 class="card-title">📱 Play Store App</h5>
+            <p class="card-text">A published Android application on Google Play Store providing real-world functionality.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow project-card">
+          <div class="card-body">
+            <h5 class="card-title">☁️ WebApp on AWS</h5>
+            <p class="card-text">A scalable cloud-hosted web application deployed using AWS cloud infrastructure.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow project-card">
+          <div class="card-body">
+            <h5 class="card-title">🧠 RAG Model</h5>
+            <p class="card-text">Implemented Retrieval-Augmented Generation (RAG) model for advanced AI-powered Q&A applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="panel">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:hackitor@hotmail.com">hackitor@hotmail.com</a></p>
+    <p>For business inquiries, please reach out. (Form integration with Hotmail SMTP coming soon)</p>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
