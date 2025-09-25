@@ -6,12 +6,12 @@ body {
 
 canvas#bg {
   position: absolute !important;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
 }
 
 /* Panels */
@@ -148,4 +148,410 @@ canvas#bg {
   z-index: 0;
 }
 
+/* Custom Black Gradient Button */
+.btn-primary {
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  background: linear-gradient(180deg, #111 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.4) 100%);
+}
+/* About Section Styling */
+.about-section {
+  text-align: left;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+.about-section p.lead {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+/* Skill Pills */
+.skills-highlight .skill-pill {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+}
+
+.skills-highlight .skill-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+.about-animation {
+  position: relative;
+  width: 400px;  /* wider container to give space for floating */
+  height: 250px;
+  margin: 0 auto;
+}
+
+.about-animation span {
+  position: absolute;
+  display: block;
+  opacity: 0.85;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Circle */
+.about-animation .circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  top: 50px;
+  left: 30px;
+  animation-delay: 0s;
+}
+
+/* Triangle */
+.about-animation .triangle {
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 150px solid #ff6a00;
+  top: 60px;       /* instead of bottom, use top for easier control */
+  left: 170px;     /* spaced to the right of circle */
+  animation-delay: 0.5s;
+}
+
+/* Square */
+.about-animation .square {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  top: 80px;       /* spaced below circle and triangle slightly */
+  left: 300px;     /* spaced to the right */
+  animation-delay: 1s;
+}
+
+/* Floating animation with X and Y movement for independent float */
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(8px, -15px) rotate(3deg); }
+  50% { transform: translate(-8px, -25px) rotate(-3deg); }
+  75% { transform: translate(6px, -18px) rotate(2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+/* Ensure all skill cards have equal height */
+.row.g-4.mt-4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* same as g-4 spacing */
+}
+
+.row.g-4.mt-4 > .col-md-2 {
+  display: flex;
+}
+
+.skill-card {
+  flex: 1;                 /* take full height of column */
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* horizontal centering */
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* Optional sliding line animation */
+.skill-card::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #fff, #ff6a00);
+  margin-top: 10px;
+  transition: width 0.4s ease-in-out;
+}
+
+.skill-card:hover::after {
+  width: 100%;
+}
+/* Hero Text Container Shadow */
+.hero-text {
+  position: relative;
+  padding: 30px 40px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05); /* subtle background for shadow visibility */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* main shadow under the div */
+  transition: box-shadow 0.3s, transform 0.3s;
+  min-height: 500px; /* increased height to fit animated ball */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Hover effect for slightly lifting shadow */
+.hero-text:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Title shadow */
+.hero-text .title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #000; /* black font */
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+  margin-bottom: 20px;
+}
+
+/* Subtitle shadow */
+.hero-text .subtitle {
+  font-size: 1.3rem;
+  color: #000; /* black font */
+  line-height: 1.7;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15); /* subtle shadow */
+  margin-bottom: 20px;
+}
+
+/* Button shadow */
+/* Remove shadow from hero button */
+.hero-text .btn-primary {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 100%);
+  color: #fff;
+  box-shadow: none; /* remove shadow */
+  transition: transform 0.3s; /* keep hover transform if you want */
+}
+
+.hero-text .btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #111 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.4) 100%);
+  box-shadow: none; /* also remove shadow on hover */
+}
+
+
+.hero-text .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  background: linear-gradient(180deg, #111 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Canvas shadow for subtle floating effect */
+.hero-text canvas#bg {
+  margin-top: 20px;
+  width: 100%;
+  height: 250px; /* increased height to match div */
+  position: relative;
+  z-index: 0;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around; /* equal distance */
+  align-items: center;
+  padding: 60px 20px;
+  background: #f0f4f8; /* light background for contrast */
+}
+
+.stat-card {
+  flex: 1;
+  margin: 0 15px;
+  padding: 30px 20px;
+  border-radius: 16px;
+  background: #ffffff; /* card color different from section */
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* 3D shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.stat-icon {
+  font-size: 48px;
+  color: #2575fc; /* icon color */
+  margin-bottom: 15px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.15); /* engraved 3D effect */
+}
+
+.stat-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 5px;
+}
+#services {
+  background: #f0f2f5;
+  padding: 60px 20px;
+}
+
+#services .section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.1);
+}
+
+#services h4 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.service-card h5 {
+  font-size: 1.3rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.service-card .service-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+#services h4 {
+  margin-bottom: 4rem; /* adds space after H4 */
+  font-weight: 500;
+  color: #555; /* optional softer text color */
+  text-align: center;
+}
+/* Contact Form Container */
+.contact-container {
+  max-width: 1000px; /* increased width */
+  width: 90%;        /* responsive */
+  margin: 0 auto;
+  padding: 50px 60px; /* more padding for spacious layout */
+  border-radius: 20px;
+  background: #f8f9fa;
+  box-shadow: 8px 8px 25px rgba(0,0,0,0.2), -8px -8px 25px rgba(255,255,255,0.5);
+  text-align: left;
+}
+
+/* Form Groups */
+/* Optional: reduce vertical spacing between fields */
+.contact-container .form-group {
+  margin-bottom: 18px;
+}
+
+/* Labels */
+.contact-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Inputs & Textarea */
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #e0e0e0;
+  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.2),
+              inset -4px -4px 8px rgba(255,255,255,0.7);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.25),
+              inset -2px -2px 6px rgba(255,255,255,0.8);
+}
+
+/* Button */
+.contact-container .btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  background: linear-gradient(145deg, #000 0%, #333 100%);
+  color: #fff;
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.4), -4px -4px 15px rgba(255,255,255,0.2);
+  transition: all 0.3s;
+}
+
+.contact-container .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.5), -6px -6px 20px rgba(255,255,255,0.25);
+}
 

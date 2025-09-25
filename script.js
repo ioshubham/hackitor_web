@@ -75,4 +75,32 @@ themeBtn.addEventListener("click", () => {
     mesh.material.color.set(0x2575fc); // Original blue color in light mode
   }
 });
+// Node.js with nodemailer
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+  service: 'hotmail',
+  auth: {
+    user: 'your-hotmail@hotmail.com',
+    pass: 'your-password-or-app-password' // Use App Password if 2FA is enabled
+  }
+});
+
+const mailOptions = {
+  from: '',
+  to: 'recipient@example.com',
+  subject: 'Test Email',
+  text: 'This is a test email from Hackitor contact form.'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if(error){
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
+
+
 
