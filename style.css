@@ -123,7 +123,9 @@ canvas#bg {
   flex: 1;
   display: flex;
   align-items: center; /* vertical alignment */
+  margin-bottom: 50px; /* increase spacing below the div */
 }
+
 
 .hero-left img {
   max-width: 100%;
