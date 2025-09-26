@@ -243,8 +243,8 @@ canvas#bg {
   border-left: 90px solid transparent;
   border-right: 90px solid transparent;
   border-bottom: 150px solid #ff6a00;
-  top: 60px;       /* instead of bottom, use top for easier control */
-  left: 170px;     /* spaced to the right of circle */
+  top: 60px;      /* instead of bottom, use top for easier control */
+  left: 170px;    /* spaced to the right of circle */
   animation-delay: 0.5s;
 }
 
@@ -253,8 +253,8 @@ canvas#bg {
   width: 120px;
   height: 120px;
   background: linear-gradient(135deg, #00c9ff, #92fe9d);
-  top: 80px;       /* spaced below circle and triangle slightly */
-  left: 300px;     /* spaced to the right */
+  top: 80px;      /* spaced below circle and triangle slightly */
+  left: 300px;    /* spaced to the right */
   animation-delay: 1s;
 }
 
@@ -278,7 +278,7 @@ canvas#bg {
 }
 
 .skill-card {
-  flex: 1;                 /* take full height of column */
+  flex: 1;                /* take full height of column */
   display: flex;
   align-items: center;      /* vertical centering */
   justify-content: center;  /* horizontal centering */
@@ -493,7 +493,7 @@ canvas#bg {
 /* Contact Form Container */
 .contact-container {
   max-width: 1000px; /* increased width */
-  width: 90%;        /* responsive */
+  width: 90%;      /* responsive */
   margin: 0 auto;
   padding: 50px 60px; /* more padding for spacious layout */
   border-radius: 20px;
@@ -555,3 +555,19 @@ canvas#bg {
   box-shadow: 6px 6px 20px rgba(0,0,0,0.5), -6px -6px 20px rgba(255,255,255,0.25);
 }
 
+/*** FIX FOR MOBILE STATS LAYOUT ***/
+@media (max-width: 767px) {
+    .stats-section .row {
+        /* This ensures the items wrap correctly and space is managed */
+        flex-wrap: wrap;
+    }
+    
+    .stats-section .stat-card {
+        /* Force the width to be 50% to fit two cards per row */
+        flex: 0 0 50%;
+        /* Adjust margins to prevent cards from overflowing due to width */
+        margin: 10px 0;
+        /* Add some padding to the container to prevent cards from touching the edges */
+        padding: 0 5px;
+    }
+}
