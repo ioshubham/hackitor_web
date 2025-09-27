@@ -76,30 +76,40 @@ themeBtn.addEventListener("click", () => {
   }
 });
 // Node.js with nodemailer
-const nodemailer = require('nodemailer');
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
 
-const transporter = nodemailer.createTransport({
-  service: 'hotmail',
-  auth: {
-    user: 'your-hotmail@hotmail.com',
-    pass: 'your-password-or-app-password' // Use App Password if 2FA is enabled
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name: document.getElementById('name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    subject: document.getElementById('subject').value.trim(),
+    message: document.getElementById('message').value.trim()
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert('Message sent successfully! Thank you.');
+      contactForm.reset();
+    } else {
+      alert('Error sending message: ' + (result.error || 'Unknown error'));
+    }
+  } catch (err) {
+    console.error('Network error:', err);
+    alert('Failed to send message. Check your network or try again later.');
   }
 });
 
-const mailOptions = {
-  from: '',
-  to: 'recipient@example.com',
-  subject: 'Test Email',
-  text: 'This is a test email from Hackitor contact form.'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if(error){
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
 
 
 
