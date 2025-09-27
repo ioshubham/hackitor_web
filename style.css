@@ -77,6 +77,7 @@ canvas#bg {
   font-weight: 600;
   transition: transform 0.3s;
 }
+
 .skill-box:hover {
   transform: scale(1.05);
 }
@@ -86,9 +87,10 @@ canvas#bg {
   border-radius: 16px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Theme Toggle Button */
@@ -110,10 +112,12 @@ canvas#bg {
   min-height: 90vh;
   padding: 0 40px;
   display: flex;
-  flex-direction: row; /* keep horizontal */
+  flex-direction: row;
+  /* keep horizontal */
   position: relative;
   overflow: hidden;
-  align-items: center; /* vertical center overall */
+  align-items: center;
+  /* vertical center overall */
   justify-content: center;
 }
 
@@ -122,8 +126,10 @@ canvas#bg {
 .hero-right {
   flex: 1;
   display: flex;
-  align-items: center; /* vertical alignment */
-  margin-bottom: 50px; /* increase spacing below the div */
+  align-items: center;
+  /* vertical alignment */
+  margin-bottom: 50px;
+  /* increase spacing below the div */
 }
 
 
@@ -138,21 +144,25 @@ canvas#bg {
   text-align: left;
   padding-left: 40px;
   justify-content: flex-start;
-  position: relative; /* make canvas position relative to this div */
+  position: relative;
+  /* make canvas position relative to this div */
 }
 
 /* Canvas should fill only hero-right and sit under text */
 .hero-right canvas#bg {
-  position: relative; /* remove absolute positioning */
-  margin-top: 20px;   /* space below text */
+  position: relative;
+  /* remove absolute positioning */
+  margin-top: 20px;
+  /* space below text */
   width: 100%;
-  height: 150px;      /* adjust as needed for ball size */
+  height: 150px;
+  /* adjust as needed for ball size */
   z-index: 0;
 }
 
 /* Custom Black Gradient Button */
 .btn-primary {
-  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.3) 100%);
   border: none;
   color: #fff;
   font-weight: 600;
@@ -163,9 +173,10 @@ canvas#bg {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-  background: linear-gradient(180deg, #111 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.4) 100%);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(180deg, #111 0%, rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 0.4) 100%);
 }
+
 /* About Section Styling */
 .about-section {
   text-align: left;
@@ -204,18 +215,20 @@ canvas#bg {
   padding: 10px 18px;
   border-radius: 30px;
   font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: default;
 }
 
 .skills-highlight .skill-pill:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
+
 .about-animation {
   position: relative;
-  width: 400px;  /* wider container to give space for floating */
+  width: 400px;
+  /* wider container to give space for floating */
   height: 250px;
   margin: 0 auto;
 }
@@ -245,8 +258,10 @@ canvas#bg {
   border-left: 90px solid transparent;
   border-right: 90px solid transparent;
   border-bottom: 150px solid #ff6a00;
-  top: 60px;      /* instead of bottom, use top for easier control */
-  left: 170px;    /* spaced to the right of circle */
+  top: 60px;
+  /* instead of bottom, use top for easier control */
+  left: 170px;
+  /* spaced to the right of circle */
   animation-delay: 0.5s;
 }
 
@@ -255,42 +270,63 @@ canvas#bg {
   width: 120px;
   height: 120px;
   background: linear-gradient(135deg, #00c9ff, #92fe9d);
-  top: 80px;      /* spaced below circle and triangle slightly */
-  left: 300px;    /* spaced to the right */
+  top: 80px;
+  /* spaced below circle and triangle slightly */
+  left: 300px;
+  /* spaced to the right */
   animation-delay: 1s;
 }
 
 /* Floating animation with X and Y movement for independent float */
 @keyframes float {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(8px, -15px) rotate(3deg); }
-  50% { transform: translate(-8px, -25px) rotate(-3deg); }
-  75% { transform: translate(6px, -18px) rotate(2deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(8px, -15px) rotate(3deg);
+  }
+
+  50% {
+    transform: translate(-8px, -25px) rotate(-3deg);
+  }
+
+  75% {
+    transform: translate(6px, -18px) rotate(2deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
+
 /* Ensure all skill cards have equal height */
 .row.g-4.mt-4 {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem; /* same as g-4 spacing */
+  gap: 1.5rem;
+  /* same as g-4 spacing */
 }
 
-.row.g-4.mt-4 > .col-md-2 {
+.row.g-4.mt-4>.col-md-2 {
   display: flex;
 }
 
 .skill-card {
-  flex: 1;                /* take full height of column */
+  flex: 1;
+  /* take full height of column */
   display: flex;
-  align-items: center;      /* vertical centering */
-  justify-content: center;  /* horizontal centering */
+  align-items: center;
+  /* vertical centering */
+  justify-content: center;
+  /* horizontal centering */
   padding: 20px;
   border-radius: 16px;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
   font-weight: 600;
   font-size: 1.1rem;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -298,7 +334,7 @@ canvas#bg {
 /* Hover effect */
 .skill-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 /* Optional sliding line animation */
@@ -315,15 +351,19 @@ canvas#bg {
 .skill-card:hover::after {
   width: 100%;
 }
+
 /* Hero Text Container Shadow */
 .hero-text {
   position: relative;
   padding: 30px 40px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05); /* subtle background for shadow visibility */
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* main shadow under the div */
+  background: rgba(255, 255, 255, 0.05);
+  /* subtle background for shadow visibility */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  /* main shadow under the div */
   transition: box-shadow 0.3s, transform 0.3s;
-  min-height: 500px; /* increased height to fit animated ball */
+  min-height: 500px;
+  /* increased height to fit animated ball */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -339,17 +379,21 @@ canvas#bg {
 .hero-text .title {
   font-size: 3rem;
   font-weight: 600;
-  color: #000; /* black font */
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+  color: #000;
+  /* black font */
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  /* subtle shadow for depth */
   margin-bottom: 20px;
 }
 
 /* Subtitle shadow */
 .hero-text .subtitle {
   font-size: 1.3rem;
-  color: #000; /* black font */
+  color: #000;
+  /* black font */
   line-height: 1.7;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15); /* subtle shadow */
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  /* subtle shadow */
   margin-bottom: 20px;
 }
 
@@ -359,41 +403,47 @@ canvas#bg {
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 600;
-  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.3) 100%);
   color: #fff;
-  box-shadow: none; /* remove shadow */
-  transition: transform 0.3s; /* keep hover transform if you want */
+  box-shadow: none;
+  /* remove shadow */
+  transition: transform 0.3s;
+  /* keep hover transform if you want */
 }
 
 .hero-text .btn-primary:hover {
   transform: translateY(-2px);
-  background: linear-gradient(180deg, #111 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.4) 100%);
-  box-shadow: none; /* also remove shadow on hover */
+  background: linear-gradient(180deg, #111 0%, rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 0.4) 100%);
+  box-shadow: none;
+  /* also remove shadow on hover */
 }
 
 
 .hero-text .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
-  background: linear-gradient(180deg, #111 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.4) 100%);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, #111 0%, rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 /* Canvas shadow for subtle floating effect */
 .hero-text canvas#bg {
   margin-top: 20px;
   width: 100%;
-  height: 250px; /* increased height to match div */
+  height: 250px;
+  /* increased height to match div */
   position: relative;
   z-index: 0;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
 }
 
 .stats-section {
   display: flex;
-  justify-content: space-around; /* equal distance */
+  justify-content: space-around;
+  /* equal distance */
   align-items: center;
   padding: 60px 20px;
-  background: #f0f4f8; /* light background for contrast */
+  background: #f0f4f8;
+  /* light background for contrast */
 }
 
 .stat-card {
@@ -401,20 +451,23 @@ canvas#bg {
   margin: 0 15px;
   padding: 30px 20px;
   border-radius: 16px;
-  background: #ffffff; /* card color different from section */
+  background: #ffffff;
+  /* card color different from section */
   text-align: center;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* 3D shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  /* 3D shadow */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .stat-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .stat-icon {
   font-size: 48px;
-  color: #2575fc; /* icon color */
+  color: #2575fc;
+  /* icon color */
   margin-bottom: 15px;
 }
 
@@ -422,7 +475,8 @@ canvas#bg {
   font-size: 2.5rem;
   font-weight: 700;
   color: #000;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.15); /* engraved 3D effect */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  /* engraved 3D effect */
 }
 
 .stat-text {
@@ -430,6 +484,7 @@ canvas#bg {
   color: #555;
   margin-top: 5px;
 }
+
 #services {
   background: #f0f2f5;
   padding: 60px 20px;
@@ -440,7 +495,7 @@ canvas#bg {
   font-weight: 700;
   margin-bottom: 10px;
   color: #000;
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
 }
 
 #services h4 {
@@ -454,7 +509,7 @@ canvas#bg {
   color: #fff;
   padding: 25px 20px;
   border-radius: 20px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
   min-height: 250px;
   display: flex;
@@ -466,7 +521,7 @@ canvas#bg {
 
 .service-card:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .service-card h5 {
@@ -484,23 +539,30 @@ canvas#bg {
   font-size: 50px;
   margin-bottom: 10px;
   color: #fff;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
+
 #services h4 {
-  margin-bottom: 4rem; /* adds space after H4 */
+  margin-bottom: 4rem;
+  /* adds space after H4 */
   font-weight: 500;
-  color: #555; /* optional softer text color */
+  color: #555;
+  /* optional softer text color */
   text-align: center;
 }
+
 /* Contact Form Container */
 .contact-container {
-  max-width: 1000px; /* increased width */
-  width: 90%;      /* responsive */
+  max-width: 1000px;
+  /* increased width */
+  width: 90%;
+  /* responsive */
   margin: 0 auto;
-  padding: 50px 60px; /* more padding for spacious layout */
+  padding: 50px 60px;
+  /* more padding for spacious layout */
   border-radius: 20px;
   background: #f8f9fa;
-  box-shadow: 8px 8px 25px rgba(0,0,0,0.2), -8px -8px 25px rgba(255,255,255,0.5);
+  box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.2), -8px -8px 25px rgba(255, 255, 255, 0.5);
   text-align: left;
 }
 
@@ -516,7 +578,7 @@ canvas#bg {
   font-weight: 600;
   margin-bottom: 5px;
   color: #333;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Inputs & Textarea */
@@ -527,8 +589,8 @@ canvas#bg {
   border-radius: 12px;
   border: none;
   background: #e0e0e0;
-  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.2),
-              inset -4px -4px 8px rgba(255,255,255,0.7);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   transition: all 0.3s;
 }
@@ -536,8 +598,8 @@ canvas#bg {
 .contact-container input:focus,
 .contact-container textarea:focus {
   outline: none;
-  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.25),
-              inset -2px -2px 6px rgba(255,255,255,0.8);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.25),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.8);
 }
 
 /* Button */
@@ -548,28 +610,64 @@ canvas#bg {
   font-weight: 600;
   background: linear-gradient(145deg, #000 0%, #333 100%);
   color: #fff;
-  box-shadow: 4px 4px 15px rgba(0,0,0,0.4), -4px -4px 15px rgba(255,255,255,0.2);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4), -4px -4px 15px rgba(255, 255, 255, 0.2);
   transition: all 0.3s;
 }
 
 .contact-container .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 6px 6px 20px rgba(0,0,0,0.5), -6px -6px 20px rgba(255,255,255,0.25);
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5), -6px -6px 20px rgba(255, 255, 255, 0.25);
 }
 
-/*** FIX FOR MOBILE STATS LAYOUT ***/
+/* 📱 Contact Section Mobile Fix */
+@media (max-width: 576px) {
+  .contact-container {
+    padding: 25px 20px;
+    border-radius: 16px;
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15),
+      -4px -4px 15px rgba(255, 255, 255, 0.4);
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+
+  .contact-container .btn-primary {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  #contact .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+}
+
+/* 📱 Stats Section Mobile Fix (2 per row on mobile) */
 @media (max-width: 767px) {
-    .stats-section .row {
-        /* This ensures the items wrap correctly and space is managed */
-        flex-wrap: wrap;
-    }
-    
-    .stats-section .stat-card {
-        /* Force the width to be 50% to fit two cards per row */
-        flex: 0 0 50%;
-        /* Adjust margins to prevent cards from overflowing due to width */
-        margin: 10px 0;
-        /* Add some padding to the container to prevent cards from touching the edges */
-        padding: 0 5px;
-    }
+  .stats-section .stat-card {
+    flex: 0 0 48%;
+    /* two per row */
+    margin: 10px 1%;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .stat-icon {
+    font-size: 32px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-text {
+    font-size: 0.95rem;
+  }
 }
